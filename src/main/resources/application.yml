@@ -37,6 +37,13 @@ logging:
     org.springframework.cloud: debug
 server:
   port: 8082
+
+api:
+  url:
+    payment: http://localhost:8085
+
+
+
 ---
 
 spring:
@@ -62,3 +69,6 @@ spring:
         event-out:
           destination: awslv2flower
           contentType: application/json
+api:
+  url:
+    payment: http://admin17-flower-review:8080

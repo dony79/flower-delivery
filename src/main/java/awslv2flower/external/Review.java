@@ -7,6 +7,7 @@ public class Review {
     private String customerName;
     private String phoneNumber;
     private String review;
+    private String status;
 
     public Long getId() {
         return id;
@@ -38,5 +39,13 @@ public class Review {
     public void setReview(String review) {
         this.review = review;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+	public void setStatus(String string) {
+        this.status = status;
+	}
 
 }

@@ -2,6 +2,9 @@ package awslv2flower;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
+
+import awslv2flower.external.Review;
+
 import java.util.List;
 
 @Entity
@@ -22,6 +25,22 @@ public class Delivery {
             Shipped shipped = new Shipped();
             BeanUtils.copyProperties(this, shipped);
             shipped.publishAfterCommit();
+
+            //Following code causes dependency to external APIs
+            // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
+
+
+
+            awslv2flower.external.Review reviewRequest = new awslv2flower.external.Review();
+        // mappings goes here
+
+            reviewRequest.setOrderId(this.getId());
+        
+            reviewRequest.setStatus("reviewRequest");
+
+            DeliveryApplication.applicationContext.getBean(awslv2flower.external.ReviewService.class).reviewRequest(reviewRequest);
+
+
 
         }else if (this.getStatus().equals("DeliveryCancelled")){
 

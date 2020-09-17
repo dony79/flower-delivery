@@ -31,14 +31,14 @@ public class Delivery {
 
 
 
-            awslv2flower.external.Review reviewRequest = new awslv2flower.external.Review();
-        // mappings goes here
-
-            reviewRequest.setOrderId(this.getId());
+        //    awslv2flower.external.Review reviewRequest = new awslv2flower.external.Review();
         
-            reviewRequest.setStatus("reviewRequest");
 
-            DeliveryApplication.applicationContext.getBean(awslv2flower.external.ReviewService.class).reviewRequest(reviewRequest);
+        //    reviewRequest.setOrderId(this.getOrderId());
+        
+        //    reviewRequest.setStatus("reviewRequest");
+
+        //    DeliveryApplication.applicationContext.getBean(awslv2flower.external.ReviewService.class).reviewRequest(reviewRequest);
 
 
 

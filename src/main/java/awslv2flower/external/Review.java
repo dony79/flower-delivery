@@ -7,7 +7,7 @@ public class Review {
     private String customerName;
     private String phoneNumber;
     private String review;
-    private String status;
+    public String status;
 
     public Long getId() {
         return id;
@@ -44,7 +44,7 @@ public class Review {
         return status;
     }
 
-	public void setStatus(String string) {
+	public void setStatus(String status) {
         this.status = status;
 	}
 

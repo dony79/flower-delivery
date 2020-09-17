@@ -29,16 +29,20 @@ public class Delivery {
             //Following code causes dependency to external APIs
             // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
+            System.out.println("1------------------shipped----------------");
 
 
-        //    awslv2flower.external.Review reviewRequest = new awslv2flower.external.Review();
+
+            awslv2flower.external.Review review = new awslv2flower.external.Review();
         
 
-        //    reviewRequest.setOrderId(this.getOrderId());
+            review.setOrderId(this.getOrderId());
         
-        //    reviewRequest.setStatus("reviewRequest");
+            review.setStatus("Shipped");
 
-        //    DeliveryApplication.applicationContext.getBean(awslv2flower.external.ReviewService.class).reviewRequest(reviewRequest);
+            System.out.println("------------------"+review.status);
+
+            DeliveryApplication.applicationContext.getBean(awslv2flower.external.ReviewService.class).reviewRequest(review);
 
 
 

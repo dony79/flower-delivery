@@ -40,7 +40,7 @@ server:
 
 api:
   url:
-    payment: http://localhost:8085
+    review: http://localhost:8085
 
 
 
@@ -71,4 +71,4 @@ spring:
           contentType: application/json
 api:
   url:
-    payment: http://admin17-flower-review:8080
+    review: http://admin17-flower-review:8080
